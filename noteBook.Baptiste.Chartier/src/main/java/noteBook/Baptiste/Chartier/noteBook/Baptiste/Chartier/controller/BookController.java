@@ -1,6 +1,9 @@
 package noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.controller;
 
 import java.util.List;
+import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,51 +25,53 @@ public class BookController {
 	
 	@Autowired
 	BookService bookService;
-	
-	@Autowired
-	Auteur auteur;
-	
-	@Autowired
-	Serie serie;
 
 	@GetMapping(value="/book")
 	@ResponseBody
 	public Book getBook(@RequestParam String titre) throws Exception {
-		return bookService.getBookRepository().findByTitre(titre);
+		return bookService.getBook(titre);
 	}
 	
-	@GetMapping(value="/books")
-	@ResponseBody
-	public List<Book> getBooks(@RequestParam Auteur auteur) throws Exception {
-		return bookService.getBookRepository().findByAuteur(auteur);
-	}
-	
-	@GetMapping(value="/Allbooks")
+	@GetMapping(value="/allBooks")
 	@ResponseBody
 	public List<Book> getAllBooks() throws Exception {
-		return bookService.getBookRepository().findAll();
+		return bookService.getAllBook();
+	}
+	
+	@GetMapping(value="/allAutheur")
+	@ResponseBody
+	public List<Auteur> getAllAutheur() throws Exception {
+		return bookService.getAllAuteur();
+	}
+	
+	@GetMapping(value="/booksFromAuteur")
+	@ResponseBody
+	public List<Book> getBooks(@Valid @RequestParam Auteur auteur) throws Exception {
+		return bookService.getBookFromAuteur(auteur);
+	}
+	
+	@GetMapping(value="/booksFromSerie")
+	@ResponseBody
+	public List<Book> getBooks(@Valid @RequestParam Serie serie) throws Exception {
+		return bookService.getBookFromSerie(serie);
+	}
+	
+	@GetMapping(value="/allSerie")
+	@ResponseBody
+	public List<Serie> getAllSerieFromAutheur(@Valid @RequestParam Auteur auteur) throws Exception {
+		return bookService.getSerieFromAuteur(auteur);
 	}
 	
 	@PutMapping(value="/book")
 	@ResponseBody
-	public Book putBook(@RequestParam Book book, @RequestParam Auteur auteur, @RequestParam(required = false) Serie serie) throws Exception {
-		Book bookInBase = bookService.getBookRepository().findByTitre(book.getTitre());
-		
-		if(bookInBase != null)
-		{
-			bookInBase.setAuteur(book.getAuteur());
-			bookInBase.setCollection(book.getCollection());
-			
-			return bookService.getBookRepository().save(bookInBase);
-		} else {
-			return bookService.getBookRepository().save(book);
-		}
+	public Book putBook(@Valid @RequestParam Book book, @Valid @RequestParam Auteur auteur, @Valid @RequestParam(required = false) Optional<Serie> serie) throws Exception {
+		return bookService.addBook(book, auteur, serie);
 	}
 	
 	@DeleteMapping(value="/deleteBook")
 	@ResponseBody
-	public void deleteBook(@RequestParam Book book) throws Exception {
-		bookService.getBookRepository().delete(book);
+	public void deleteBook(@Valid @RequestParam Book book) throws Exception {
+		bookService.deleteBook(book);
 	}
 	
 }

@@ -1,11 +1,14 @@
 package noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Serie {
@@ -18,6 +21,9 @@ public class Serie {
 	
 	@ManyToOne(optional=false)
 	Auteur auteur;
+	
+	@OneToMany
+	List<Book> listBook;
 
 	public Serie() {
 		super();
@@ -46,4 +52,14 @@ public class Serie {
 	public void setAuteur(Auteur auteur) {
 		this.auteur = auteur;
 	}
+
+	public List<Book> getListBook() {
+		return listBook;
+	}
+
+	public void setListBook(List<Book> listBook) {
+		this.listBook = listBook;
+	}
+	
+	
 }

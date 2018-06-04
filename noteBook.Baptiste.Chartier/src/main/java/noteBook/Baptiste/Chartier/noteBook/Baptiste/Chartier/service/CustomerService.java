@@ -1,18 +1,17 @@
 package noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.service;
 
-import javax.transaction.Transactional;
+import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-import noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.repository.CustomerRepository;
+import noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.model.Customer;
+import noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.model.Role;
 
-@Transactional
-@Repository
-public class CustomerService {
+@Service
+public interface CustomerService {
 
-	@Autowired
-	CustomerRepository customerRepository;
-	
-	
+	public boolean verifierExistenceCustomer(String email);
+	public Customer findCustomer(String email);
+	public Customer saveCustomer(Customer nouveauCustomer);
+	public void deleteCustomer(Customer customer);
 }

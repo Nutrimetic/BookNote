@@ -14,4 +14,5 @@ public interface CustomerService {
 	public Customer findCustomer(String email);
 	public Customer saveCustomer(Customer nouveauCustomer);
 	public void deleteCustomer(Customer customer);
+	public List<Role> getListeRoleFromCustomer(String email);
 }

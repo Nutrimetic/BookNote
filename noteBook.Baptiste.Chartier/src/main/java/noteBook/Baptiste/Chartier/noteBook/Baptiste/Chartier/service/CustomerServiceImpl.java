@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.model.Customer;
 import noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.model.Role;
 import noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.repository.CustomerRepository;
+import noteBook.Baptiste.Chartier.noteBook.Baptiste.Chartier.repository.RoleRepository;
 
 @Transactional
 @Repository
@@ -17,6 +18,9 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	CustomerRepository customerRepository;
+	
+	@Autowired
+	RoleRepository roleRepository;
 
 	@Override
 	public boolean verifierExistenceCustomer(String email) {
@@ -41,5 +45,10 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void deleteCustomer(Customer customer) {
 		customerRepository.delete(customer);
+	}
+
+	@Override
+	public List<Role> getListeRoleFromCustomer(String email) {
+		return customerRepository.findByEmail(email).getListRole();
 	}
 }

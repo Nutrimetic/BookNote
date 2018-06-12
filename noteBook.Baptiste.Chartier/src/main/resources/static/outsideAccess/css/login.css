@@ -2,11 +2,47 @@
 
 body {
 	overflow: hidden;
+	/*background-image:url(../img/background.jpg);
+	background-repeat:no-repeat;
+	background-position:50% 0%;*/
+	margin:0;
+  	padding:0;
+	background: url(../img/background2.jpg) no-repeat center fixed; 
+  	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  	background-size: cover; /* version standardisée */
+  	
 	
 }
 
-.backGroundImage {
-	display: block;
+.login {
+	/*display:block;
 	margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;*/
+    /*position: absolute;
+    right: 0px;
+    width: 600px;
+    padding: 10px;*/
+  
+}
+
+#login-box {
+	background: #f2f2f2;
+	position: absolute;
+  	top: 50%;
+  	left : 50%;
+  	transform: translate3d(-50%, -50%, 0);
+  	width: 25%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+#login-box-img {
+	background-image: url(../img/balrog2.png);
+	/*opacity: 0.6;*/
+	padding: 80px;
+    
+}
+
+.form-group {
+	margin: 0;
 }

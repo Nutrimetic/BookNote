@@ -19,7 +19,7 @@
     </body>
 </html> 
 -->
- 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,52 +36,19 @@
 
 
 <body>
-	<img src="outsideAccess/img/background.jpg" alt="background" class="backGroundImage">
-
-<!--  
-<div class="row">
-  <div class="col">
-  	<img src="outsideAccess/img/merlin.jpg" alt="merlin" class="img-thumbnail">
-  	<img src="outsideAccess/img/hobb.jpg" alt="hobb" class="img-thumbnail" >
-  	<img src="outsideAccess/img/dieu.jpg" alt="hobb" class="img-thumbnail" >
-  </div> 
-  <div class="col">
-  	<img src="outsideAccess/img/maudite.jpg" alt="princesse" class="img-thumbnail" >
-  	<img src="outsideAccess/img/mage.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/ombre.jpg" alt="hobb" class="img-thumbnail">
-  </div>
-  <div class="col">
-  	<img src="outsideAccess/img/nains.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/magicien.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/horizon.jpg" alt="hobb" class="img-thumbnail">
-  </div>
-  <div class="col">
-  	<img src="outsideAccess/img/roue.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/fer.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/malerune.jpg" alt="hobb" class="img-thumbnail">
-  </div>
-  <div class="col">
-  	<img src="outsideAccess/img/porteur.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/pouvoir.jpeg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/martyr.jpg" alt="hobb" class="img-thumbnail">
-  </div>
-  <div class="col">
-  	<img src="outsideAccess/img/nuit.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/loup.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/roi.jpg" alt="hobb" class="img-thumbnail">
-  </div>
-  <div class="col">
-  	<img src="outsideAccess/img/legende.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/brume.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/silence.jpg" alt="hobb" class="img-thumbnail">
-  </div>
-  <div class="col">
-  	<img src="outsideAccess/img/cook.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/shannara.jpg" alt="test" class="img-thumbnail">
-  	<img src="outsideAccess/img/voeu.jpg" alt="hobb" class="img-thumbnail">
-  </div>
-</div>
--->
+	<main>
+		<article>
+			<div id="login-box">
+				<div id="login-box-img">
+					<form th:action="@{/login}" method="post" class="login container text-center">
+				        <div class="form-group"><label><input type="text" class="form-control" name="username" placeholder="Enter email"/> </label></div>
+				        <div class="form-group"><label><input type="password" name="password" placeholder="Password" class="form-control"/> </label></div>
+				        <div class="form-group"><input type="submit" class="btn btn-light" value="Submit"/></div>
+				    </form>
+			    </div>
+		    </div>
+	    </article>
+    </main>
 </body>
 
 </html>

@@ -49,11 +49,6 @@ public class Application {
 	    @Override
 	    protected void configure(HttpSecurity http) throws Exception {
 	        http
-	        	/*.antMatcher("/test/*")
-	        		.authorizeRequests()
-	        		.anyRequest()
-	        		.hasRole("ADMIN")
-	        		.and()*/
 	        	.authorizeRequests()
 	        		.antMatchers("/outsideAccess/**").permitAll().and()
 	            .authorizeRequests()

@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+header {
+	background-image:linear-gradient(gray , black );
+	position : absolute;
+	left :0; right:0;
+	width:30%;
+	height : 100%;
+}
+
+body {
+	background-color : coral;
+	
+}
+
+
+#barreSelection {
+	overflow: scroll;
+}

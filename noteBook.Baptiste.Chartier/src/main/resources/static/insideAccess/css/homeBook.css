@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+
+.navigationSerieAuteur {
+	background-image:linear-gradient(#9900cc , #993399 );
+	position : absolute;
+	left :0; right:0;
+	width:20%;
+	height : 100%;
+}
+
+body {
+	/*background: #993399;*/
+	
+}
+
+
+#barreSelection {
+	overflow: scroll;
+}
+
+.navSerieAuteur {
+	text-align : center;
+}
+
+.elementNavSerieAuteur {
+	display : inline-block;
+}
